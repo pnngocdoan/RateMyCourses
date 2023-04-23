@@ -4,7 +4,7 @@ import './CreatePost.css';
 import { supabase } from '../client';
 
 const CreatePost = () => {
-    const [subject, setSubject] = useState("");
+    const [subject, setSubject] = useState("General Education");
     const subjects = ["General Education", "Arts", "Biology", "Chemistry", "Economics", "Environmental Studies", "Geography", "History", "Humanities", "International Studies", "Languages", "Literature", "Mathematics", "Philosophy", "Physics", "Political Science", "Psychology", "Social Behavioral Science", "Sociology", "Writing"]
     const [courseRating, setCourseRating] = useState(0);
     const [hoverCourseRating, setHoverCourseRating] = useState(0);

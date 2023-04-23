@@ -17,14 +17,25 @@ const Post = (props) => {
             .eq('id', props.id)
         setVote((vote) => vote + 1);
     }
+
     const deletePost = async(event) => {
         event.preventDefault();
         await supabase.from('Posts').delete().eq('id', props.id);
         window.location = "/";
     }
+
+    const dateTime = new Date(props.created_at);
+    const year = dateTime.getFullYear();
+    const month = String(dateTime.getMonth() + 1).padStart(2, '0');
+    const day = String(dateTime.getDate()).padStart(2, '0');
+    const hours = String(dateTime.getHours()).padStart(2, '0');
+    const minutes = String(dateTime.getMinutes()).padStart(2, '0');
+    const seconds = String(dateTime.getSeconds()).padStart(2, '0');
+    const formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+
     return (
         <div className="card-container">
-            <h5>Posted on {props.created_at}</h5>
+            <h5>Posted on {formattedDateTime}</h5>
             <h2>{props.course_name}</h2>
             <h3>by {props.prof_name}</h3>
             <button className="vote-btn" onClick={updateVote}>{vote} 👍</button>
