@@ -20,24 +20,6 @@ const EditPost = () => {
     const [profName, setProfName] = useState("");
     const [comment, setComment] = useState("");
 
-    // useEffect(async () => {
-    //     const { data } = await supabase
-    //         .from('Posts')
-    //         .select()
-    //         .order('created_at', { ascending: true })
-    //     if (data) {
-    //         const selectedPost = data.filter(item => item.id == id)[0];
-    //         if (selectedPost) {
-    //             setPost(selectedPost)
-    //             setCourseRating(selectedPost.course_rating);
-    //             setProfRating(selectedPost.prof_rating);
-    //             setCourseName(selectedPost.course_name);
-    //             setProfName(selectedPost.prof_name);
-    //             setComment(selectedPost.comment);
-    //         }
-    //     };
-    // }, [])
-
     const fetchData = async () => {
         const { data } = await supabase
             .from('Posts')
@@ -57,8 +39,6 @@ const EditPost = () => {
     }
 
     fetchData();
-
-
 
     const updatePost = async (event) => {
         event.preventDefault();
@@ -111,7 +91,7 @@ const EditPost = () => {
                                 onMouseLeave={() => setHoverCourseRating(0)}
                             >
                                 <FaStar
-                                    color={(hoverCourseRating || courseRating) >= ratingValue ? "#ffc107" : "#e4e5e9"}
+                                    color={(hoverCourseRating || courseRating) != ratingValue ? "#ffc107" : "#e4e5e9"}
                                     size={30}
                                     style={{ cursor: "pointer" }}
 

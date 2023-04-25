@@ -35,7 +35,7 @@ const Post = (props) => {
 
     return (
         <div className="card-container">
-            <h5>Posted on {formattedDateTime}</h5>
+            <h5>Posted by Anonymous {props.id} on {formattedDateTime}</h5>
             <h2>{props.course_name}</h2>
             <h3>by {props.prof_name}</h3>
             <button className="vote-btn" onClick={updateVote}>{vote} 👍</button>
