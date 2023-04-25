@@ -28,9 +28,11 @@ function App() {
   return(
     <div className="App">
       <div className="header">
-        <h3>Course Ratings at College A</h3>
-        <Link to="/"><button className="header-btn">Home</button></Link>
-        <Link to="/create"><button className="header-btn">Rate a course</button></Link>
+        <h3>College A Course Ratings</h3>
+        <div className="header-btn-container">
+          <Link to="/"><button className="header-btn">Home</button></Link>
+          <Link to="/create"><button className="header-btn">Rate a course</button></Link>
+        </div>
       </div>
       {element}
     </div>

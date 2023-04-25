@@ -86,12 +86,14 @@ const EditPost = () => {
                             <span
                                 key={ratingValue}
                                 id="course-rating"
-                                onClick={() => setCourseRating(ratingValue)}
+                                onClick={() => {
+                                    setCourseRating(ratingValue);
+                                    console.log(`course rating updated: ${courseRating}, ${ratingValue}`)}}
                                 onMouseEnter={() => setHoverCourseRating(ratingValue)}
                                 onMouseLeave={() => setHoverCourseRating(0)}
                             >
                                 <FaStar
-                                    color={(hoverCourseRating || courseRating) != ratingValue ? "#ffc107" : "#e4e5e9"}
+                                    color={(hoverCourseRating || courseRating) >= ratingValue ? "#ffc107" : "#e4e5e9"}
                                     size={30}
                                     style={{ cursor: "pointer" }}
 
@@ -119,7 +121,7 @@ const EditPost = () => {
 
 
                     <label for="comment">Comment</label>
-                    <textarea id="comment" name="comment" defaultValue={comment} onChange={(e) => setComment(e.target.value)}/>
+                    <textarea id="comment" name="comment" defaultValue={comment} onChange={(e) => setComment(e.target.value)} />
 
                     <input type="submit" value="Submit" onClick={updatePost} />
                 </form>

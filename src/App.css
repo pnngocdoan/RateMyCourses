@@ -33,3 +33,44 @@
   }
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none; /* Remove background color from the header */
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+  margin-bottom: 50px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 25px;
+  background: -webkit-linear-gradient(#4B0082, #FF8C00); /* Add webkit linear gradient to the h3 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.header-btn {
+  background: none; /* Remove background color from the buttons */
+  border: none;
+  color: transparent;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-image: radial-gradient(#4B0082, #FF8C00); /* Add radial gradient to the buttons */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.header-btn:hover {
+  background-image: radial-gradient(#FF8C00, #4B0082);
+}

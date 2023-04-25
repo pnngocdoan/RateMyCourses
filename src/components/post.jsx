@@ -6,8 +6,6 @@ import { supabase } from '../client';
 const Post = (props) => {
     const [showMoreMenu, setShowMoreMenu] = useState(false);
     const [vote, setVote] = useState(props.vote_count);
-    console.log(vote);
-    console.log(props.vote_count);
 
     const updateVote = async (event) => {
         event.preventDefault();
@@ -31,13 +29,13 @@ const Post = (props) => {
     const hours = String(dateTime.getHours()).padStart(2, '0');
     const minutes = String(dateTime.getMinutes()).padStart(2, '0');
     const seconds = String(dateTime.getSeconds()).padStart(2, '0');
-    const formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+    const formattedDateTime = `at ${hours}:${minutes} on ${month}/${day}/${year} `;
 
     return (
         <div className="card-container">
-            <h5>Posted by Anonymous {props.id} on {formattedDateTime}</h5>
             <h2>{props.course_name}</h2>
             <h3>by {props.prof_name}</h3>
+            <h5>Reviewed by Anonymous ID {props.id} {formattedDateTime}</h5>
             <button className="vote-btn" onClick={updateVote}>{vote} 👍</button>
             <div className="more-btn" onClick={() => setShowMoreMenu(!showMoreMenu)}>
                 <div className="dots">...</div>

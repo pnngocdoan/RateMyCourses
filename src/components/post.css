@@ -55,3 +55,7 @@ h3 {
     margin-top: 15px;
     margin-bottom: 25px;
 }
+
+h5 {
+    font-style: italic;
+}
