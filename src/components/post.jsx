@@ -41,9 +41,9 @@ const Post = (props) => {
                 <div className="dots">...</div>
                 {showMoreMenu && (
                     <div className="more-menu">
-                        <p><Link to={"edit/" + props.id}>Edit Post</Link></p>
-                        <p><Link to={"post/" + props.id}>Show Post</Link></p>
-                        <p onClick={deletePost}>Delete Post</p>
+                        <Link to={"edit/" + props.id}><p className="more-link">Edit Post</p></Link>
+                        <Link to={"post/" + props.id}><p className="more-link">Show Post</p></Link>
+                        <p className="more-link" onClick={deletePost}>Delete Post</p>
                     </div>
                 )}
             </div>

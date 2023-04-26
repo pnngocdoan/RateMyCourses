@@ -1,7 +1,7 @@
 .card-container {
     backdrop-filter: blur(2px);
-    border: 1px solid rgba(153, 153, 153, 0.497);
-    border-radius: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 40px;
     padding-right: 15px;
@@ -9,53 +9,85 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 40px;
-    width: 400px;
-    height: 200px;
+    width: 400px; /* set fixed width */
+    height: 200px; /* set fixed height */
     text-align: center;
-}
-.dots {
-    font-size: 24px;
-    margin-left: 10px;
-    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card-container h2 {
+    font-size: 20px;
+    background: linear-gradient(45deg, #4B0082, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+  
+.card-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+  
+.card-container h5 {
+    font-style: italic;
+    font-size: 14px;
+    color: #a5a5a5;
+    margin-top: 20px;
+}
+  
+.vote-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f9f9f9;
+    color: #4e4e4e;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+  
+.vote-btn:hover {
+    background-color: #4e4e4e;
+    color: #fff;
+}
+  
 .more-btn {
-    position:absolute;
+    position: absolute;
     top: 10px;
     right: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+  
 .more-menu {
     position: absolute;
     top: 40px;
     right: 0;
-    width: 100px;
+    width: 130px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
-
-p {
+  
+.more-link {
+    padding: 10px;
+    margin: 0;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: #000;
+    font-weight: normal;
+  }
+  
+.more-link:hover {
+    background: linear-gradient(to right, #4B0082, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
-
-p:hover {
-    background-color: #f2f2f2;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-h3 {
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-
-h5 {
-    font-style: italic;
-}
+  

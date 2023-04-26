@@ -1,0 +1,60 @@
+form {
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 16px;
+    font-style: italic;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 0;
+    align-self: left;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0;
+    text-align: left;
+    height: 70px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #4B0082, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+    margin: 0;
+    text-align: left;
+}
+
+span {
+    margin-left: 5px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+span:first-child {
+    margin-left: 25px;
+}

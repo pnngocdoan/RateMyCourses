@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Post from '../components/post';
 import { supabase } from '../client';
 import './Home.css'
-
 const Home = () => {
     const [posts, setPosts] = useState([]);
     const [sort, setSort] = useState("Newest");

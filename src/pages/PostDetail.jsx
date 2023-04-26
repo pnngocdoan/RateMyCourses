@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { supabase } from "../client";
 import { FaStar, FaHeart } from "react-icons/fa";
-
+import './PostDetail.css'
 const PostDetail = () => {
     const {id} = useParams();
 
@@ -22,17 +22,22 @@ const PostDetail = () => {
     return (
         <div>
             {post && (
-                <form>
-                    <label id="course_name">Course Name: {post.course_name}</label> 
-                    <br />
-            
-                    <label id="subject">Subject: {post.subject} </label>
-                    <br />
-            
-                    <label id="prof_name">Professor Name: {post.prof_name}</label> 
-                    <br />
-            
-                    <label for="course-rating">This Course's Rating: 
+                <form className="form-container">
+                    <p>Reviewed by Anonymous ID {post.id}</p>
+                    <div className="field">
+                        <h3 className="title">Course Name: </h3>
+                        <h3 className="value">{post.course_name}</h3>
+                    </div>
+                    <div className="field">
+                        <h3 className="title">Subject: </h3>
+                        <h3 className="value">{post.subject}</h3>
+                    </div>
+                    <div className="field">
+                        <h3 className="title">Professor Name: </h3>
+                        <h3 className="value">{post.prof_name}</h3>
+                    </div>
+                    <div className="field">
+                        <h3 className="title">This Course's Rating: 
                         {[1,2,3,4,5].map((ratingValue) => (
                             <span 
                                 key={ratingValue} 
@@ -43,9 +48,11 @@ const PostDetail = () => {
                                         size={30}
                                 />
                             </span>      
-                        ))} </label> 
-            
-                    <label for="prof-rating"> This Professor's Rating: 
+                        ))} 
+                        </h3>
+                    </div>
+                    <div className="field">
+                        <h3 className="title"> This Professor's Rating: 
                         {[1,2,3,4,5].map((ratingValue) => (
                             <span 
                                 key={ratingValue} 
@@ -56,13 +63,12 @@ const PostDetail = () => {
                                         size={30}
                                 />
                                 </span>      
-                            ))} </label> 
-                            
-            
-                            <label for="comment">Comment: </label>
-                            <p id="comment">{post.comment}</p>
-            
-                        </form>
+                            ))} 
+                        </h3> 
+                    </div>
+                    <h3 className="title">Comment: </h3>
+                    <h3 className="value">{post.comment}</h3>
+            </form>
             )}
         </div>
     )

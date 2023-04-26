@@ -34,7 +34,7 @@ const CreatePost = () => {
     };
     return(
         <div>
-            <form>
+            <form className="create-form">
 
                 <label for="course_name">Course Name </label> 
                 <input type="text" id="course_name" name="course_name" placeholder="Enter the course name"/>
